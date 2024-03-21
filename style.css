@@ -5,58 +5,80 @@
     
 }
 
-body {
-    background: #f5f6f7;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    overflow: auto;
-    margin: 0;
+.title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
 }
 
-.mensaje {
-    background-color: #f5f6f7;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    overflow: auto;
-    margin: 0;
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #e3e7e9;
+    overflow: hidden;
 }
 
 .input-texto {
+    position: absolute;
     margin: 0 0 20px 30px;
     padding: 10px 15px;
     border: 2px solid #0a0a23;
     border-radius: 25px;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 300;
     text-align: center;
-    width: 90%;
-    max-width: 500px;
+    width: 42%;
+    height: 60%;
+    left: 12%;
+    top: 15%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+}
+
+.input-texto:focus {
+    border: 4px solid #144FE1;
+    outline: none;
 }
 
 .nota {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 80%;
+    left: 25%;
+    top: 80%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     color: #0a0a23;
-    margin-top: 5px;
-    margin-bottom: 30px;
+    font-style: italic;
+    
 }
 
 .buttons {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1% 0;
+    gap: 20px;
+    position: absolute;
+    width: 80%;
+    left: 18%;
+    top: 82%;
+    
 }
 
 .btn-encriptar {
     background-color: #144FE1;
     color: #f5f6f7;
     border: 1px solid #0a0a23;
-    border-radius: 10px;
+    border-radius: 24px;
     padding: 10px 15px;
     margin: 10px;
     font-size: 20px;
@@ -69,7 +91,7 @@ body {
     background-color: #144FE1;
     color: #f5f6f7;
     border: 1px solid #0a0a23;
-    border-radius: 10px;
+    border-radius: 24px;
     padding: 10px 15px;
     margin: 10px;
     font-size: 20px;
@@ -91,17 +113,205 @@ body {
 }
 
 .ventana-resultado {
-    background-color: #f5f6f7;
+    background: white;
+    display: flex;
+    justify-content: center;
+    height: 90%;
+    width: 30%;
+    overflow: hidden;
+    position: absolute;
+    left: 60%;
+    top: 5%;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    padding: 10px 15px;
+    overflow: auto;
+}
+
+.ventana-resultado img {
+    position: absolute;
+  width: 80%;
+  height: 50%;
+  top: 15%;
+  
+}
+
+.mensaje-encriptado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+  gap: 16px;
+  position: absolute;
+  width: 100%;
+  top: 65%;
+  text-align: center;
+}
+
+.mensaje-encriptado h2 {
+  width: 60%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  text-align: center;
+  color: #343a40;
+}
+
+.mensaje-encriptado p {
+  width: 80%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #495057;
+}
+
+ 
+.mensaje {
+    background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
+    padding: 1% 0;
+    gap: 20px;
+    position: absolute;
+    height: 80%;
+    outline: none;
+    border: none;
+    width: 100%;
+    overflow: auto;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    text-align: center;
+    visibility: hidden;
+
 }
 
+.copiar {
+    background-color: #144FE1;
+    color: #f5f6f7;
+    border: 1px solid #0a0a23;
+    border-radius: 24px;
+    padding: 10px 15px;
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .2s ease-in-out; 
+    width: 200px;
+    position: absolute;
+    left: 40%;
+    top: 90%;
+    visibility: hidden;
+}
+
+.copiar:hover {
+    background-color: #031b08;
+    color: #f5f6f7;
+    transform: scale(1.1); 
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #144FE1;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 57.5em) {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+  .encriptadorr {
+    width: 100%;
+  }
+  .input-texto {
+    width: 80%;
+    height: 60%;
+    left: 10%;
+    top: 5%;
+  }
+  .nota {
+    width: 80%;
+    left: 20%;
+    top: 67%;
+    font-size: 16px;
+  }
  
+  .buttons {
+    width: 80%;
+    left: 10%;
+    top: 70%;
+  }
+  .btn-encriptar,
+  .btn-desencriptar {
+    width: 48%;
+    border-radius: 16px;
+  }
+  .btn-encriptar:hover,
+  .btn-desencriptar:hover {
+    margin: 0.3%;
+    width: 47.5%;
+    padding: 1.8%;
+  }
+  .ventana-resultado {
+    width: 80%;
+    height: 15%;
+    left: 10%;
+    top: 80%;
+  }
+  .mensaje-encriptado {
+    width: 100%;
+  }
+  .mensaje {
+    width: 80%;
+    height: 60%;
+    left: 10%;
+    top: 80%;
+  } 
+  
+  .mensaje-encriptado {
+    width: 100%;
+    top: 5%;
+  }
+  .mensaje-encriptado h2 {
+    width: 80%;
+  }
+  .mensaje-encriptado p {
+    width: 90%;
+  }
+  .copiar {
+    width: 48%;
+    border-radius: 16px;
+    top: 99%;
+    left: 25%;
+  }
+  .copiar:hover {
+    margin: 0.3%;
+    width: 47.5%;
+    padding: 1.8%;
+  }
+  .ventana-resultado img {
+    top: 0;
+    display: none;
+    visibility: hidden;
+  }
+}
 
 
 
